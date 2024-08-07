@@ -1,5 +1,5 @@
 extend schema
-  @link(url: "https://specs.apollo.dev/federation/v2.5", import: ["@key"])
+  @link(url: "https://specs.apollo.dev/federation/v2.5", import: ["@key", "@tag"])
 
 type Query {
   """
@@ -10,7 +10,7 @@ type Query {
   """
   Get all featured products to be listed
   """
-  getFeaturedProducts(limit: Int): [Product]!
+  getFeaturedProducts(limit: Int): [Product]! @tag(name: "internal")
 
   """
   Get products based on a single category
@@ -20,7 +20,7 @@ type Query {
   """
   Get all available variants of products to shop for. Optionally provide some search filters
   """
-  searchProductVariants(searchInput: VariantSearchInput! = {}): [ProductVariant]!
+  searchProductVariants(searchInput: VariantSearchInput! = {}): [ProductVariant]! @tag(name: "internal")
 
   """
   Get a specific product by id. Useful for the product details page or checkout page
