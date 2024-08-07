@@ -61,6 +61,7 @@ telemetry:
     # This value can't exceed the value of tracing.common.sampler.
     field_level_instrumentation_sampler: 0.5
     experimental_local_field_metrics: true
+    experimental_apollo_metrics_reference_mode: extended
 
   exporters:
     tracing:
