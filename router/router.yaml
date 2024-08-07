@@ -42,11 +42,6 @@ authorization:
   preview_directives: 
     enabled: true
 
-limits:
-  max_depth: 5
-  max_height: 10
-  max_aliases: 3
-
 coprocessor:
   url: https://coprocessor-wn3vwa6nlq-ue.a.run.app 
   timeout: 2s 
@@ -58,14 +53,13 @@ preview_persisted_queries:
   enabled: true
 apq:
   enabled: false
-
+         
 telemetry: 
   apollo:
     field_level_instrumentation_sampler: 0.5
-
- exporters:
-    tracing:
-      common:
-        # FTV1 uses the same trace sampling as other tracing options,
-        # so this value is also required.
-        sampler: 0.5
+   exporters:
+      tracing:
+        common:
+          # FTV1 uses the same trace sampling as other tracing options,
+          # so this value is also required.
+          sampler: 0.5
