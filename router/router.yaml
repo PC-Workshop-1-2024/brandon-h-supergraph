@@ -58,3 +58,7 @@ preview_persisted_queries:
   enabled: true
 apq:
   enabled: false
+
+telemetry: 
+  apollo:
+    experimental_apollo_metrics_reference_mode: extended
