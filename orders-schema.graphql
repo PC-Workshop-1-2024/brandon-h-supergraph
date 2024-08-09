@@ -1,11 +1,12 @@
 extend schema
-  @link(url: "https://specs.apollo.dev/federation/v2.5", import: ["@key", "@authenticated", "@requiresScopes"])
+  @link(url: "https://specs.apollo.dev/federation/v2.5", import: ["@key", "@authenticated", "@requiresScopes", "@policy"])
 
-type Query @authenticated {
+type Query @policy(policies: ["authenticated"]) {
   """
   Get a specific order by id. Meant to be used for a detailed view of an order
   """
-  order(id: ID!): Order
+  order(id: ID!): Order 
+  orderUnauthenticated(id: ID!): Order @policy(policies: ["unauthenticated-allowed"])
 }
 
 """
