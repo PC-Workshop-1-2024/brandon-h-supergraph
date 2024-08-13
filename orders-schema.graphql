@@ -1,12 +1,12 @@
 extend schema
-  @link(url: "https://specs.apollo.dev/federation/v2.5", import: ["@key", "@authenticated", "@requiresScopes", "@policy"])
+  @link(url: "https://specs.apollo.dev/federation/v2.5", import: ["@key", "@authenticated", "@requiresScopes"])
 
-type Query @policy(policies: ["authenticated"]) {
+type Query {
   """
   Get a specific order by id. Meant to be used for a detailed view of an order
   """
   order(id: ID!): Order 
-  orderUnauthenticated(id: ID!): Order @policy(policies: ["unauthenticated"])
+  orderUnauthenticated(id: ID!): Order
 }
 
 """
@@ -40,8 +40,10 @@ type Order @key(fields: "id") {
   orderDate: String
 }
 
-type User @key(fields: "id", resolvable: false) {
+type User @key(fields: "id") {
   id: ID!
+  phone: String @tag(name: "private")
+  email: String! @tag(name: "private")
 }
 
 type ProductVariant @key(fields: "id", resolvable: false) {
