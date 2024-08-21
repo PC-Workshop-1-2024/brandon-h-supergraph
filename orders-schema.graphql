@@ -31,6 +31,16 @@ type Order @key(fields: "id") {
 
   metadataN1: [Metadata]
   metadataOptimized: [Metadata]
+
+  """
+  The total cost of the order
+  """
+  total: Float
+
+  """
+  The date the order was made
+  """
+  orderDate: String
 }
 
 type Metadata {
