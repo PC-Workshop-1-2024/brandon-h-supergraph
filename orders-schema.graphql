@@ -37,7 +37,7 @@ type Order @key(fields: "id") {
   """
   Dataloader memoizing the requests no batching
   """
-  metadataOptimized: [Metadata]
+  metadataMemoOnly: [Metadata]
 
   """
   Dataloader and batching the request to our mock service
