@@ -29,8 +29,20 @@ type Order @key(fields: "id") {
   """
   items: [ProductVariant!]! @requiresScopes(scopes: [["order:items"]])
 
+  """
+  No batching or memoization
+  """
   metadataN1: [Metadata]
+
+  """
+  Dataloader memoizing the requests no batching
+  """
   metadataOptimized: [Metadata]
+
+  """
+  Dataloader and batching the request to our mock service
+  """
+  metadataBatched: [Metadata]
 
   """
   The total cost of the order
