@@ -29,15 +29,8 @@ type Order @key(fields: "id") {
   """
   items: [ProductVariant!]! @requiresScopes(scopes: [["order:items"]])
 
-  """
-  The total cost of the order
-  """
-  total: Float
-
-  """
-  The date the order was made
-  """
-  orderDate: String
+  metadataN1: [Metadata]
+  metadataOptimized: [Metadata]
 }
 
 type User @key(fields: "id") {
