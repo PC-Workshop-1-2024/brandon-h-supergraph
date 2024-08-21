@@ -33,6 +33,12 @@ type Order @key(fields: "id") {
   metadataOptimized: [Metadata]
 }
 
+type Metadata {
+  id: ID!
+  taxClass: String
+  shippingClass: String
+}
+
 type User @key(fields: "id") {
   id: ID!
   phone: String @tag(name: "private") @shareable
