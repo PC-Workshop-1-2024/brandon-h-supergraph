@@ -53,6 +53,8 @@ type Order @key(fields: "id") {
   The date the order was made
   """
   orderDate: String
+
+  example: String!
 }
 
 type Metadata {
