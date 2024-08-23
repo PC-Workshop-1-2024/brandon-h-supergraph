@@ -77,3 +77,18 @@ telemetry:
         # FTV1 uses the same trace sampling as other tracing options,
         # so this value is also required.
         sampler: 0.5
+
+
+preview_entity_cache:
+  # Enable Cache
+  enabled: false
+  metrics:
+    enabled: true
+    separate_per_type: false
+  redis:
+    urls:
+      - redis://verysecret@34.75.85.172:6380?db=0
+    timeout: 10ms
+    required_to_start: true
+    namespace: entity-cache
+    ttl: 1h
