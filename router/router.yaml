@@ -84,7 +84,7 @@ preview_entity_cache:
 
   # Configure Redis
   redis:
-    urls: ["redis://verysecret@34.75.85.172:6380?db=0"]
+    urls: ["redis://verysecret@34.75.85.172:6379?db=0"]
     timeout: 5ms # Optional, by default: 2ms
     ttl: 24h # Optional, by default no expiration
 
