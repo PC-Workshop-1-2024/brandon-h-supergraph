@@ -81,7 +81,7 @@ telemetry:
 
 preview_entity_cache:
   # Enable Cache
-  enabled: false
+  enabled: true
   metrics:
     enabled: true
     separate_per_type: false
