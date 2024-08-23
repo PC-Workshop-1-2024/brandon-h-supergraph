@@ -78,17 +78,16 @@ telemetry:
         # so this value is also required.
         sampler: 0.5
 
-
+# Enable entity caching globally
 preview_entity_cache:
-  # Enable Cache
   enabled: true
-  metrics:
-    enabled: true
-    separate_per_type: false
+
+  # Configure Redis
   redis:
-    urls:
-      - redis://verysecret@34.75.85.172:6380?db=0
-    timeout: 10ms
-    required_to_start: true
-    namespace: entity-cache
-    ttl: 1h
+    urls: ["redis://verysecret@34.75.85.172:6380?db=0"]
+    timeout: 5ms # Optional, by default: 2ms
+    ttl: 24h # Optional, by default no expiration
+
+  subgraph:
+    all:
+      enabled: true
