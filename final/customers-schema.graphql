@@ -20,7 +20,6 @@ type User @key(fields: "id") {
   address: String @tag(name: "private")
   phone: String @tag(name: "private") @override(from: "orders", label: "percent(50)")
   email: String! @tag(name: "private") @override(from: "orders", label: "percent(50)")
-
   """
   The user's active cart session. Once the cart items have been purchases, they transition to an Order
   """
@@ -32,6 +31,7 @@ type User @key(fields: "id") {
   orders(filters: OrderFilters): [Order]
 
   paymentMethods: [PaymentMethod]
+  test: String!
 }
 
 """
